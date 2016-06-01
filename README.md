@@ -1,6 +1,6 @@
 Notes:
 
-- Use selector `#invoice[data-url*="estimates"]` to target estimates specifically. `#invoice[data-url*="invoices"]` also works.
 - `::first-letter` selector not supported by PDF generator
+- General sibling selectors (`~`) not supported in PDF generation
 - FreeAgent won't render a PDF with `font-size: 0;`
-- `~` adjacent sibling selectors not supported in PDF generation
+- Use selector `#invoice[data-url*="estimates"]` to target estimates specifically. `#invoice[data-url*="invoices"]` also works.
