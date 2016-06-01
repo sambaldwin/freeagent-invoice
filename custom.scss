@@ -1,0 +1,233 @@
+$font-family: Courier, monospace;
+$font-size: 10;
+$rem-base: #{$font-size + pt};
+$line-height: 1.2;
+$lh: $line-height * 1em;
+$lh-rem: $font-size * $line-height * 1pt;
+$border: 1px solid;
+
+#invoice {
+
+  // Base
+  box-sizing: border-box;
+  font-size: #{$font-size + pt};
+  line-height: $line-height;
+  max-width: 100%;
+  color: #000000;
+  border: 0;
+  padding: 15mm 20mm;
+  font-family: $font-family;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: normal;
+
+  // Reset
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  strong,
+  th,
+  td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    box-sizing: inherit;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    letter-spacing: inherit;
+    text-align: inherit;
+  }
+
+  // Structure
+  #invoice-info,
+  #client-details,
+  #payment-details,
+  #comments {
+    margin-top: $lh;
+  }
+  #invoice-amount {
+    margin-top: $lh*3;
+    margin-bottom: $lh*3;
+  }
+
+  
+  // Empty space div, for headed paper
+  #invoice-blank-header {
+    min-height: 20mm;
+  }
+  // Hide payment-details + comments if using headed paper
+  #invoice-blank-header + * + * + * + #payment-details,
+  #invoice-blank-header + * + * + * + * + #comments {
+    display: none !important;
+  }
+  // Make this work when "Other information" element is present
+  #invoice-blank-header + * + * + * + * + #payment-details,
+  #invoice-blank-header + * + * + * + * + * + #comments {
+    display: none !important;
+  }
+  // Make this work when "Payment details" aren't present (e.g. on estimates)
+  #invoice-blank-header + * + * + * + #comments {
+    display: none !important;
+  }
+  
+  //
+  // Header & Info
+  //
+  
+  #invoice-header .locality,
+  #invoice-header #company-postcode {
+    display: inline-block;
+  }
+  
+  #invoice-info p#payment-terms {
+    text-transform: lowercase;
+  }
+  #invoice-info p#payment-terms span#payment-terms-label {
+    text-transform: none;
+  }
+  // Hide total amount – no need to repeat
+  #invoice-info p#payment-total {
+    display: none;
+  }
+  
+  //
+  // Table
+  //
+  table {
+    width: auto;
+    border-spacing: 0;
+  }
+  td,
+  th {
+    padding: $lh/2 $lh;
+    vertical-align: baseline;
+  }
+  th:first-child,
+  td:first-child {
+    padding-left: 0;
+  }
+  th:last-child,
+  td:last-child {
+    padding-right: 0;
+  }
+  thead th {
+    padding-top: 0;
+    white-space: nowrap;
+  }
+  tfoot td {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  tfoot tr:first-child td {
+    padding-top: $lh/2;
+  }
+  tfoot tr td:nth-child(2) {
+    padding-right: $lh/2;
+  }
+  // Increase minimum height of table
+  tbody tr:last-child td {
+    padding-bottom: $lh-rem*2;
+  }
+  // Stretch the description column
+  td.description_td {
+    width: 100%;
+  }
+  // Quantity column
+  tbody td:first-child {
+    // Don't wrap
+    white-space: nowrap;
+  }
+  
+  th.unitprice_th,
+  th.salestax_th,
+  th.subtotal_th,
+  td.item_r,
+  #total_tr td {
+    text-align: right;
+  }
+    
+  //
+  // Text replacements
+  //
+  
+  @mixin new-text($new-text) {
+    visibility: hidden;
+    font-size: .01px !important; // HACK can't be zero else FreeAgent won't render PDF
+    &:before {
+      visibility: visible;
+      font-size: $rem-base !important;
+      content: "#{$new-text}";
+    }
+  }
+  
+  #invoice-info span#payment-terms-label {
+    @include new-text("Please pay within");
+  }
+  
+  th.details_th,
+  th.details_notax_th {
+    @include new-text("Description");
+    &:before {
+      padding-right: $lh;
+      padding-left: $lh;
+    }
+  }
+  th.unitprice_th {
+    @include new-text("Unit £");
+    &:before {
+      padding-right: $lh;
+      padding-left: $lh;
+    }
+  }
+  th.subtotal_th {
+    @include new-text("Subtotal £");
+    &:before {
+      padding-left: $lh;
+    }
+  }
+  
+  // Hide "GBP" unit from total
+  #total_currency .currency {
+    display: none;
+  }
+  
+  #payment-details #bank_name:before {
+    content: "Bank name: ";
+  }
+  #payment-details #sort-code strong {
+    @include new-text("Sort code:");
+  }
+  #payment-details #account-number strong {
+    @include new-text("Account number:");
+  }
+  #payment-details #payment-reference strong {
+    @include new-text("Payment reference:");
+  }
+
+
+  //
+  // Misc
+  //
+
+  #invoice-info h2 {
+    margin-bottom: $lh;
+    &:before,
+    &:after {
+      display: block;
+      content: "-----------";
+            // "Invoice 123"
+    }
+  }
+  &[data-url*="estimates"] #invoice-info h2:before,
+  &[data-url*="estimates"] #invoice-info h2:after {
+    content: "------------";
+          // "Estimate 123"
+  }
+
+}
