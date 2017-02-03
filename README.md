@@ -1,6 +1,6 @@
 # FreeAgent invoice template
 
-Simple invoice template for [FreeAgent](https://freeagent.com) typeset in Courier, one weight, one size. Written in Sass, for convenience.
+Minimal invoice template for [FreeAgent](https://freeagent.com). Typeset in Courier: one weight, one size. Written in Sass for convenience.
 
 Notes:
 
