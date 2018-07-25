@@ -79,12 +79,11 @@ $border: 1px solid;
   //
   // Header & Info
   //
-  
-  #invoice-header .locality,
-  #invoice-header #company-postcode {
-    display: inline-block;
+
+  #company-address > div.fn.org {
+    margin-bottom: $lh !important;
   }
-  
+
   #invoice-info p#payment-terms {
     text-transform: lowercase;
   }
