@@ -116,88 +116,17 @@
 #invoice #total_tr td {
   text-align: right;
 }
-#invoice #invoice-info span#payment-terms-label {
-  font-size: 0.01px !important;
-  visibility: hidden;
-}
-#invoice #invoice-info span#payment-terms-label:before {
-  content: "Please pay within";
-  font-size: 10pt !important;
-  visibility: visible;
-}
-#invoice th.details_th,
-#invoice th.details_notax_th {
-  font-size: 0.01px !important;
-  visibility: hidden;
-}
-#invoice th.details_th:before,
-#invoice th.details_notax_th:before {
-  content: "Description";
-  font-size: 10pt !important;
-  visibility: visible;
-}
 #invoice th.details_th:before,
 #invoice th.details_notax_th:before {
   padding-left: 1.2em;
   padding-right: 1.2em;
 }
-#invoice th.unitprice_th {
-  font-size: 0.01px !important;
-  visibility: hidden;
-}
-#invoice th.unitprice_th:before {
-  content: "Unit £";
-  font-size: 10pt !important;
-  visibility: visible;
-}
 #invoice th.unitprice_th:before {
   padding-left: 1.2em;
   padding-right: 1.2em;
 }
-#invoice th.subtotal_th {
-  font-size: 0.01px !important;
-  visibility: hidden;
-}
-#invoice th.subtotal_th:before {
-  content: "Subtotal £";
-  font-size: 10pt !important;
-  visibility: visible;
-}
 #invoice th.subtotal_th:before {
   padding-left: 1.2em;
-}
-#invoice #total_currency .currency {
-  display: none;
-}
-#invoice #payment-details #bank_name:before {
-  content: "Bank name: ";
-}
-#invoice #payment-details #sort-code strong {
-  font-size: 0.01px !important;
-  visibility: hidden;
-}
-#invoice #payment-details #sort-code strong:before {
-  content: "Sort code:";
-  font-size: 10pt !important;
-  visibility: visible;
-}
-#invoice #payment-details #account-number strong {
-  font-size: 0.01px !important;
-  visibility: hidden;
-}
-#invoice #payment-details #account-number strong:before {
-  content: "Account number:";
-  font-size: 10pt !important;
-  visibility: visible;
-}
-#invoice #payment-details #payment-reference strong {
-  font-size: 0.01px !important;
-  visibility: hidden;
-}
-#invoice #payment-details #payment-reference strong:before {
-  content: "Payment reference:";
-  font-size: 10pt !important;
-  visibility: visible;
 }
 #invoice #invoice-info h2 {
   margin-bottom: 1.2em;
