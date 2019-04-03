@@ -49,15 +49,6 @@
 #invoice #company-address > div.fn.org {
   margin-bottom: 1.2em !important;
 }
-#invoice #invoice-info p#payment-terms {
-  text-transform: lowercase;
-}
-#invoice #invoice-info p#payment-terms span#payment-terms-label {
-  text-transform: none;
-}
-#invoice #invoice-info p#payment-total {
-  display: none;
-}
 #invoice table {
   border-spacing: 0;
   width: auto;
