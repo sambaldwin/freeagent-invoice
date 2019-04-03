@@ -46,17 +46,6 @@
 #invoice #invoice-blank-header {
   min-height: 20mm;
 }
-#invoice #invoice-blank-header + * + * + * + #payment-details,
-#invoice #invoice-blank-header + * + * + * + * + #comments {
-  display: none !important;
-}
-#invoice #invoice-blank-header + * + * + * + * + #payment-details,
-#invoice #invoice-blank-header + * + * + * + * + * + #comments {
-  display: none !important;
-}
-#invoice #invoice-blank-header + * + * + * + #comments {
-  display: none !important;
-}
 #invoice #company-address > div.fn.org {
   margin-bottom: 1.2em !important;
 }
