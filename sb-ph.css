@@ -1,0 +1,213 @@
+@charset "UTF-8";
+#invoice {
+  border: 0;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: Courier, monospace;
+  font-size: 10pt;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.2;
+  max-width: 100%;
+  padding: 15mm 20mm;
+  text-align: left;
+}
+#invoice h1,
+#invoice h2,
+#invoice h3,
+#invoice h4,
+#invoice h5,
+#invoice h6,
+#invoice p,
+#invoice strong,
+#invoice th,
+#invoice td {
+  border: 0;
+  box-sizing: inherit;
+  color: inherit;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+}
+#invoice #invoice-info,
+#invoice #client-details,
+#invoice #payment-details,
+#invoice #comments {
+  margin-top: 1.2em;
+}
+#invoice #invoice-amount {
+  margin-bottom: 3.6em;
+  margin-top: 3.6em;
+}
+#invoice #invoice-blank-header {
+  min-height: 20mm;
+}
+#invoice #invoice-blank-header + * + * + * + #payment-details,
+#invoice #invoice-blank-header + * + * + * + * + #comments {
+  display: none !important;
+}
+#invoice #invoice-blank-header + * + * + * + * + #payment-details,
+#invoice #invoice-blank-header + * + * + * + * + * + #comments {
+  display: none !important;
+}
+#invoice #invoice-blank-header + * + * + * + #comments {
+  display: none !important;
+}
+#invoice #company-address > div.fn.org {
+  margin-bottom: 1.2em !important;
+}
+#invoice #invoice-info p#payment-terms {
+  text-transform: lowercase;
+}
+#invoice #invoice-info p#payment-terms span#payment-terms-label {
+  text-transform: none;
+}
+#invoice #invoice-info p#payment-total {
+  display: none;
+}
+#invoice table {
+  border-spacing: 0;
+  width: auto;
+}
+#invoice td,
+#invoice th {
+  padding: 0.6em 1.2em;
+  vertical-align: baseline;
+}
+#invoice th:first-child,
+#invoice td:first-child {
+  padding-left: 0;
+}
+#invoice th:last-child,
+#invoice td:last-child {
+  padding-right: 0;
+}
+#invoice thead th {
+  padding-top: 0;
+  white-space: nowrap;
+}
+#invoice tfoot td {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+#invoice tfoot tr:first-child td {
+  padding-top: 0.6em;
+}
+#invoice tfoot tr td:nth-child(2) {
+  padding-right: 0.6em;
+}
+#invoice tbody tr:last-child td {
+  padding-bottom: 24pt;
+}
+#invoice td.description_td {
+  width: 100%;
+}
+#invoice tbody td:first-child {
+  white-space: nowrap;
+}
+#invoice th.unitprice_th,
+#invoice th.salestax_th,
+#invoice th.subtotal_th,
+#invoice td.item_r,
+#invoice #total_tr td {
+  text-align: right;
+}
+#invoice #invoice-info span#payment-terms-label {
+  font-size: 0.01px !important;
+  visibility: hidden;
+}
+#invoice #invoice-info span#payment-terms-label:before {
+  content: "Please pay within";
+  font-size: 10pt !important;
+  visibility: visible;
+}
+#invoice th.details_th,
+#invoice th.details_notax_th {
+  font-size: 0.01px !important;
+  visibility: hidden;
+}
+#invoice th.details_th:before,
+#invoice th.details_notax_th:before {
+  content: "Description";
+  font-size: 10pt !important;
+  visibility: visible;
+}
+#invoice th.details_th:before,
+#invoice th.details_notax_th:before {
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+#invoice th.unitprice_th {
+  font-size: 0.01px !important;
+  visibility: hidden;
+}
+#invoice th.unitprice_th:before {
+  content: "Unit £";
+  font-size: 10pt !important;
+  visibility: visible;
+}
+#invoice th.unitprice_th:before {
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+#invoice th.subtotal_th {
+  font-size: 0.01px !important;
+  visibility: hidden;
+}
+#invoice th.subtotal_th:before {
+  content: "Subtotal £";
+  font-size: 10pt !important;
+  visibility: visible;
+}
+#invoice th.subtotal_th:before {
+  padding-left: 1.2em;
+}
+#invoice #total_currency .currency {
+  display: none;
+}
+#invoice #payment-details #bank_name:before {
+  content: "Bank name: ";
+}
+#invoice #payment-details #sort-code strong {
+  font-size: 0.01px !important;
+  visibility: hidden;
+}
+#invoice #payment-details #sort-code strong:before {
+  content: "Sort code:";
+  font-size: 10pt !important;
+  visibility: visible;
+}
+#invoice #payment-details #account-number strong {
+  font-size: 0.01px !important;
+  visibility: hidden;
+}
+#invoice #payment-details #account-number strong:before {
+  content: "Account number:";
+  font-size: 10pt !important;
+  visibility: visible;
+}
+#invoice #payment-details #payment-reference strong {
+  font-size: 0.01px !important;
+  visibility: hidden;
+}
+#invoice #payment-details #payment-reference strong:before {
+  content: "Payment reference:";
+  font-size: 10pt !important;
+  visibility: visible;
+}
+#invoice #invoice-info h2 {
+  margin-bottom: 1.2em;
+}
+#invoice #invoice-info h2:before,
+#invoice #invoice-info h2:after {
+  content: "-----------";
+  display: block;
+}
+#invoice[data-url*="estimates"] #invoice-info h2:before,
+#invoice[data-url*="estimates"] #invoice-info h2:after {
+  content: "------------";
+}
