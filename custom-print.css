@@ -4,3 +4,6 @@
   width: 210mm;
   height: 297mm;
 }
+
+/* Hide duplicate company name */
+h1#company-name { display: none }
