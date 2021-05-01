@@ -1,6 +1,6 @@
 # FreeAgent invoice template
 
-Minimal invoice template for [FreeAgent](https://freeagent.com), as used by [SB-PH](https://sb-ph/com). Typeset in Courier: one weight, one size.
+Minimal invoice template for [FreeAgent](https://freeagent.com), as used by [SB-PH](https://sb-ph.com). Typeset in Courier: one weight, one size.
 
 ## Getting started
 
